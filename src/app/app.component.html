@@ -1,3 +1,1 @@
-<h1>Angular</h1>
-<courses></courses>
-<app-favourite></app-favourite>
+<app-favourite [isFavourite]="post.isFavourite" (onChange)="onFavouriteChange($event)"></app-favourite>
