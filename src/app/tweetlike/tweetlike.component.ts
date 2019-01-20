@@ -11,8 +11,8 @@ export class TweetlikeComponent {
   @Output('change') change = new EventEmitter();
 
   onChange(){
+    this.likesCount += (this.isActive) ? -1 : 1;
     this.isActive = !this.isActive;
-    this.likesCount = (this.likesCount != 0) ? 0 : 1;
     this.change.emit({isActive: this.isActive, likesCount: this.likesCount})
   }
 }
