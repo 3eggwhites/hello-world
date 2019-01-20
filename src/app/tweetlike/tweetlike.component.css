@@ -1,0 +1,11 @@
+.liked{
+    color: deeppink;
+}
+
+.disliked{
+    color: #ccc;
+}
+
+.mouseOver{
+    cursor: pointer;
+}

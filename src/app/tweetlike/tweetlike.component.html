@@ -1,0 +1,4 @@
+<span class="mouseOver" [class.liked]="isActive" [class.disliked]="!isActive" (click)="onChange()">
+  <i class="fas fa-heart"></i>
+</span>
+<span>{{ likesCount }}</span>

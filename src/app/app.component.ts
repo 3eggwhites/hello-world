@@ -1,3 +1,4 @@
+import { TweetEventArgs } from './tweetlike/tweetlike.component';
 import { FavouriteChangedEventArgs } from './favourite/favourite.component';
 import { Component } from '@angular/core';
 
@@ -8,12 +9,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularApp';
-  post = {
-    title: "Title",
-    isFavourite: true
+  tweet = {
+    body: "tweet body...",
+    likesCount: 0,
+    isLiked: false
   }
 
-  onFavouriteChange(newObject: FavouriteChangedEventArgs){
-    console.log('Favourite changed:', newObject);
+  onLikesChange(likeEventArgs: TweetEventArgs){
+    this.tweet.isLiked = likeEventArgs.isActive;
+    this.tweet.likesCount = likeEventArgs.likesCount;
+    console.log(this.tweet);
   }
+
+  /*onFavouriteChange(newObject: FavouriteChangedEventArgs){
+    console.log('Favourite changed:', newObject);
+  }*/
 }
