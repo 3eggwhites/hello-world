@@ -8,6 +8,7 @@ import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { TweetlikeComponent } from './tweetlike/tweetlike.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TweetlikeComponent } from './tweetlike/tweetlike.component';
     CoursesComponent,
     CourseComponent,
     FavouriteComponent,
-    TweetlikeComponent
+    TweetlikeComponent,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
