@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { CoursesService } from './courses.service';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { TweetlikeComponent } from './tweetlike/tweetlike.component';
 import { ZippyComponent } from './zippy/zippy.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 @NgModule({
@@ -18,11 +20,13 @@ import { ZippyComponent } from './zippy/zippy.component';
     CourseComponent,
     FavouriteComponent,
     TweetlikeComponent,
-    ZippyComponent
+    ZippyComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [CoursesService
   ],
