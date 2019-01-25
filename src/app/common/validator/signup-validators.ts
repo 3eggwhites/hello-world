@@ -8,4 +8,16 @@ export class SignupFormValidator {
       return null;
     }
   }
+
+  static shouldbeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
+    return new Promise((resolve,reject) => {
+      setTimeout(() => {
+        if((control.value as string) === 'user'){
+          resolve ({shouldbeUnique: true});
+        }else{
+          resolve (null);
+        }
+      }, 2000);
+    });
+  }
 }

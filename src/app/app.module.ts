@@ -11,6 +11,7 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { TweetlikeComponent } from './tweetlike/tweetlike.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 
 @NgModule({
@@ -21,12 +22,14 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     FavouriteComponent,
     TweetlikeComponent,
     ZippyComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [CoursesService
   ],
