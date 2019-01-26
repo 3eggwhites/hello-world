@@ -15,6 +15,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { HttpServiceConsumerComponent } from './http-service-consumer/http-service-consumer.component';
+import { PostServiceService } from './services/post-service.service';
 
 
 @NgModule({
@@ -37,7 +38,9 @@ import { HttpServiceConsumerComponent } from './http-service-consumer/http-servi
     FormsModule,
     HttpClientModule
   ],
-  providers: [CoursesService
+  providers: [
+    CoursesService,
+    PostServiceService
   ],
   bootstrap: [AppComponent]
 })
