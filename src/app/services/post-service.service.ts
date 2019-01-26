@@ -18,7 +18,7 @@ export class PostServiceService {
   }
 
   deletePostService(postId) {
-    return this.httpClient.delete(this.url + "/" + postId);
+    return this.httpClient.delete(this.url + "/" + 1000);
   }
 
   updatePostService(postId, data) {

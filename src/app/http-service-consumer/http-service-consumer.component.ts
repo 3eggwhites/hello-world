@@ -12,32 +12,61 @@ export class HttpServiceConsumerComponent implements OnInit {
   constructor(private postService: PostServiceService) {}
 
   ngOnInit() {
-    this.postService.getPostsDataService().subscribe(response => {
-      this.posts = response as any;
-    });
+    this.postService.getPostsDataService().subscribe(
+      response => {
+        this.posts = response as any;
+      },
+      error => {
+        console.log(error);
+        alert("An unexpected error occurred.");
+      }
+    );
   }
 
   addPost(inputElement: HTMLInputElement) {
     let post = { body: inputElement.value };
     inputElement.value = "";
-    this.postService.createPostService(post).subscribe(response => {
-      console.log(response);
-    });
+    this.postService.createPostService(post).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+        alert("An unexpected error occurred.");
+      }
+    );
     this.posts.splice(0, 0, post);
   }
 
   updatePost(post) {
     this.postService
       .updatePostService(post.id, JSON.stringify({ isRead: true }))
-      .subscribe(response => {
-        console.log(response);
-      });
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+          alert("An unexpected error occurred.");
+        }
+      );
   }
 
   deletePost(post) {
-    this.postService.deletePostService(post.id).subscribe(response => {
-      let index = this.posts.indexOf(post);
-      this.posts.splice(index, 1);
-    });
+    this.postService.deletePostService(post.id).subscribe(
+      response => {
+        console.log(response as Response);
+        let index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);
+      },
+      (error: Response) => {
+        if (error.status === 404) {
+          alert("This post has already been deleted");
+        } else {
+          console.log(error);
+          alert("An unexpected error occurred.");
+        }
+      }
+    );
   }
 }
