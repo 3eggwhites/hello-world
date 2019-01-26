@@ -11,7 +11,11 @@ export class PasswordResetComponent {
   constructor(private formBuilder: FormBuilder) {}
 
   resetForm = this.formBuilder.group({
-    oldPassword: ["", Validators.required], //+asyncVAlidator for old password check
+    oldPassword: [
+      "",
+      Validators.required,
+      PasswordResetValidator.checkOldPassword
+    ],
     resetGroup: this.formBuilder.group(
       {
         newPassword: ["", Validators.required],
@@ -25,20 +29,19 @@ export class PasswordResetComponent {
     console.log(this.resetForm);
   }
 
-  get oldPassword(){
-    return this.resetForm.get('oldPassword');
+  get oldPassword() {
+    return this.resetForm.get("oldPassword");
   }
 
-  get newPassword(){
-    return this.resetForm.get('resetGroup.newPassword');
+  get newPassword() {
+    return this.resetForm.get("resetGroup.newPassword");
   }
 
-  get confirmPassword(){
-    return this.resetForm.get('resetGroup.confirmPassword');
+  get confirmPassword() {
+    return this.resetForm.get("resetGroup.confirmPassword");
   }
 
-  get resetGroup(){
-    return this.resetForm.get('resetGroup');
+  get resetGroup() {
+    return this.resetForm.get("resetGroup");
   }
-
 }
