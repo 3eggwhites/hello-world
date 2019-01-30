@@ -1,0 +1,9 @@
+.li-padding{
+    padding: 10px;
+}
+
+.avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
