@@ -7,8 +7,12 @@
       style="width:60px"
     />
     <div class="media-body">
-      <h4 class="mt-0 mb-1">{{ follower.login }}</h4>
-      <a [href]="follower.html_url">{{ follower.html_url }}</a>
+      <h4 class="media-heading">
+        <a [routerLink]="['/followers', follower.id, follower.login]">{{
+          follower.login
+        }}</a>
+      </h4>
+      <a [routerLink]="follower.html_url">{{ follower.html_url }}</a>
     </div>
   </li>
 </ul>
